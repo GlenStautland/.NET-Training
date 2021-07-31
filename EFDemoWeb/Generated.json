@@ -1,11 +1,11 @@
 [
   {
     "FirstName": "Glen",
-    "LastNAme": "Stautland",
+    "LastName": "Stautland",
     "Age": 31,
     "Addresses": [
       {
-        "StreetAddress": "Hånes",
+        "StreetAdress": "Hånes",
         "City": "Kristiansand",
         "State": "Agder",
         "ZipCode": "4635"
@@ -14,8 +14,7 @@
     "EmailAddresses": [
       {
         "EmailAddress": "Gthinderaker@gmail.com"
-      } 
-
+      }
     ]
   }
 ]

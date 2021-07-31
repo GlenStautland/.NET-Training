@@ -2,6 +2,7 @@
 using EFDataAccessLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -24,9 +25,14 @@ namespace EFDemoWeb.Pages
 
         public void OnGet()
         {
-           // LoadSampleData();
+            LoadSampleData();
+
+            var people = _db.People
+                .Include(a => a.Addresses)
+                .Include(e => e.EmailAddresses)
+                .ToList();
         }
-        /*
+        
         public void LoadSampleData()
         {
             if (_db.People.Count() == 0)
@@ -36,7 +42,7 @@ namespace EFDemoWeb.Pages
                 _db.AddRange(people);
                 _db.SaveChanges();
             }
-        }*/
+        }
 
     }
 }
